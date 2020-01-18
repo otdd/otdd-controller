@@ -1,1 +1,1 @@
-go build -o otddcontroller .
+go build -o otdd-controller .

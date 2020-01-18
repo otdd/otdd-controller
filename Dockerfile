@@ -1,7 +1,4 @@
-FROM golang
-RUN mkdir -p /go/src/k8s.io/otdd-controller
-ADD . /go/src/k8s.io/otdd-controller
-WORKDIR /go
-RUN go get ./...
-RUN go install -v ./...
-CMD ["/go/bin/otdd-controller"]
+FROM centos:7
+COPY ./otdd-controller /usr/local/bin/
+WORKDIR /usr/local/bin/
+CMD ["/usr/local/bin/otdd-controller"]
